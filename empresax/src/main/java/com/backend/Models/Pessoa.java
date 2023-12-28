@@ -1,19 +1,30 @@
 package com.backend.Models;
 
 import com.backend.Enum.TipoIdentificador;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.*;
+
+import java.io.Serializable;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode
-public class Pessoa {
-    String nome;
-    String identificador;
-    TipoIdentificador tipoIdentificador;
-    double valParcela;
-    double valTotal;
+@Entity
+@Table(name = "pessoa")
+public class Pessoa implements Serializable {
+    @Id
+    private String identificador;
+    @Column(name="nome",nullable = false)
+    private String nome;
+    @Column(name="tipo-identificador",nullable = false,length = 4)
+    private TipoIdentificador tipoIdentificador;
+    @Column(name="val-parcela",nullable = false)
+    private double valParcela;
+    @Column(name="val-total",nullable = false)
+    private double valTotal;
 }
