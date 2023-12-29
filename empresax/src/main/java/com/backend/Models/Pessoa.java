@@ -1,6 +1,9 @@
 package com.backend.Models;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 
 import java.io.Serializable;
@@ -15,9 +18,6 @@ import java.util.Date;
 @Table(name = "pessoa")
 public class Pessoa implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(name = "identificador",nullable = false,unique = true)
     private String identificador;
     @Column(name="nome",nullable = false)
     private String nome;
