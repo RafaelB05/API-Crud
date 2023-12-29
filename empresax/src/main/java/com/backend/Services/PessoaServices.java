@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class PessoaServices {
 
-    private TipoIdentificador verificaIdentificador(String id){
+    private TipoIdentificador verificaTipoIdentificador(String id){
         TipoIdentificador  identificador = null;
 
         switch (id.length()){
@@ -49,7 +49,7 @@ public class PessoaServices {
 
     public Pessoa createPessoa(PessoaDTO pessoa){
         Pessoa entidade = new Pessoa();
-        TipoIdentificador identificadorPessoa = verificaIdentificador(pessoa.getIdentificador());
+        TipoIdentificador identificadorPessoa = verificaTipoIdentificador(pessoa.getIdentificador());
         entidade.setNome(pessoa.getNome());
         entidade.setIdentificador(pessoa.getIdentificador());
         entidade.setDataNascimento(pessoa.getDataNascimento());
@@ -57,8 +57,11 @@ public class PessoaServices {
         entidade.setValTotal(identificadorPessoa.retornaValTotal());
         entidade.setValParcela(identificadorPessoa.retornaValMin());
 
-        return repositories.save(entidade);
-
+        if(identificadorPessoa.validaIdentificador(entidade.getIdentificador())){
+            return repositories.save(entidade);
+        }
+        else
+            throw new RuntimeException();
     }
 
     public Pessoa updatePessoa(int id,PessoaDTO pessoa){
