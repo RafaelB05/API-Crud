@@ -1,13 +1,11 @@
 spring:
-  config:
-    import: file:.env
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://${HOST}:3306/empresa_x?useTimezone-true&serverTimezone=UTC
-    username: ${USERNAME}
-    password: ${PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/empresa_x?useTimezone-true&serverTimezone=UTC
+    username: root
+    password: admin
   jpa:
     open-in-view: false
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     show-sql: false

@@ -4,7 +4,7 @@ import lombok.Getter;
 
 @Getter
 public enum TipoIdentificador{
-    CPF(11){
+    CPF("CPF"){
         public double retornaValMin(){
             return 300.00;
         }
@@ -13,7 +13,7 @@ public enum TipoIdentificador{
             return 10000.00;
         }
     },
-    CNPJ(14){
+    CNPJ("CNPJ"){
         public double retornaValMin(){
             return 1000.00;
         }
@@ -21,7 +21,7 @@ public enum TipoIdentificador{
             return 100000.00;
         }
     },
-    EU(8){
+    EU("EU"){
         public double retornaValMin(){
             return 100.00;
         }
@@ -30,7 +30,7 @@ public enum TipoIdentificador{
             return 100000.00;
         }
     },
-    AP(10){
+    AP("AP"){
         public double retornaValMin(){
             return 400.00;
         }
@@ -45,10 +45,8 @@ public enum TipoIdentificador{
 
     public abstract double retornaValTotal();
 
-    private final int size;
-    TipoIdentificador(int tamanho){
-        size = tamanho;
-    }
+    private final String tipo;
+    TipoIdentificador(String tipo){this.tipo = tipo;}
 
 
 

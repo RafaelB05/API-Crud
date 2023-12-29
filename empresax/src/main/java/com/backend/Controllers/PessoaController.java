@@ -1,6 +1,7 @@
 package com.backend.Controllers;
 
 
+import com.backend.Data.Dto.PessoaDTO;
 import com.backend.Models.Pessoa;
 import com.backend.Services.PessoaServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,12 +28,12 @@ public class PessoaController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Pessoa createPessoa(@RequestBody Pessoa pessoa){
+    public Pessoa createPessoa(@RequestBody PessoaDTO pessoa){
         return services.createPessoa(pessoa);
     }
 
     @PutMapping(value = "/{identificador}",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public  Pessoa updatePessoa(@PathVariable(value = "identificador")String identificador, @RequestBody Pessoa pessoa){
+    public  Pessoa updatePessoa(@PathVariable(value = "identificador")String identificador, @RequestBody PessoaDTO pessoa){
         return services.updatePessoa(identificador,pessoa);
     }
 

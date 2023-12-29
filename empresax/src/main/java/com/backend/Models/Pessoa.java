@@ -1,6 +1,5 @@
 package com.backend.Models;
 
-import com.backend.Enum.TipoIdentificador;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -8,6 +7,7 @@ import jakarta.persistence.Table;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -22,9 +22,11 @@ public class Pessoa implements Serializable {
     @Column(name="nome",nullable = false)
     private String nome;
     @Column(name="tipo-identificador",nullable = false,length = 4)
-    private TipoIdentificador tipoIdentificador;
+    private String tipoIdentificador;
     @Column(name="val-parcela",nullable = false)
     private double valParcela;
     @Column(name="val-total",nullable = false)
     private double valTotal;
+    @Column(name="data-nasc",nullable = false)
+    private Date dataNascimento;
 }
