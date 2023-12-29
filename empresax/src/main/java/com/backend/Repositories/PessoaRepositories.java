@@ -5,4 +5,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PessoaRepositories extends JpaRepository<Pessoa,String> {}
+public interface PessoaRepositories extends JpaRepository<Pessoa,Integer> {}

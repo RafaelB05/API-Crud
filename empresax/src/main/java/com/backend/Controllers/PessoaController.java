@@ -17,9 +17,9 @@ public class PessoaController {
     @Autowired
     private PessoaServices services;
 
-    @GetMapping(value ="/{identificador}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public Pessoa findPessoa(@PathVariable(value = "identificador")String identificador){
-        return services.findPessoa(identificador);
+    @GetMapping(value ="/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public Pessoa findPessoa(@PathVariable(value = "id")int id){
+        return services.findPessoa(id);
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
@@ -32,14 +32,14 @@ public class PessoaController {
         return services.createPessoa(pessoa);
     }
 
-    @PutMapping(value = "/{identificador}",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public  Pessoa updatePessoa(@PathVariable(value = "identificador")String identificador, @RequestBody PessoaDTO pessoa){
-        return services.updatePessoa(identificador,pessoa);
+    @PutMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    public  Pessoa updatePessoa(@PathVariable(value = "id")int id, @RequestBody PessoaDTO pessoa){
+        return services.updatePessoa(id,pessoa);
     }
 
-    @DeleteMapping(value = "/{identificador}")
-    public  void deletePessoa(@PathVariable(value = "identificador")String identificador){
-        services.deletePessoa(identificador);
+    @DeleteMapping(value = "/{id}")
+    public  void deletePessoa(@PathVariable(value = "id")int id){
+        services.deletePessoa(id);
     }
 
 }

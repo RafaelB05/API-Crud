@@ -39,8 +39,8 @@ public class PessoaServices {
     @Autowired
     private  PessoaRepositories repositories;
 
-    public Pessoa findPessoa(String identificador){
-        return repositories.findById(identificador).orElseThrow();
+    public Pessoa findPessoa(int id){
+        return repositories.findById(id).orElseThrow();
     }
 
     public List<Pessoa> findAllPessoas(){
@@ -61,8 +61,8 @@ public class PessoaServices {
 
     }
 
-    public Pessoa updatePessoa(String identificador,PessoaDTO pessoa){
-        Pessoa entidade = repositories.findById(identificador).orElseThrow();
+    public Pessoa updatePessoa(int id,PessoaDTO pessoa){
+        Pessoa entidade = repositories.findById(id).orElseThrow();
 
         entidade.setNome(pessoa.getNome());
         entidade.setDataNascimento(pessoa.getDataNascimento());
@@ -70,8 +70,8 @@ public class PessoaServices {
         return repositories.save(entidade);
     }
 
-    public void deletePessoa(String identificador){
-        Pessoa entidade = repositories.findById(identificador).orElseThrow();
+    public void deletePessoa(int id){
+        Pessoa entidade = repositories.findById(id).orElseThrow();
         repositories.delete(entidade);
     }
 
