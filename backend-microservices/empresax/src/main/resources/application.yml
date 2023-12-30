@@ -1,0 +1,19 @@
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: crud-pessoa
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/empresa_x?useTimezone-true&serverTimezone=UTC
+    username: root
+    password: admin
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+

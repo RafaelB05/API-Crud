@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="83208530-b06f-4cc5-8ee7-744bf9c47113" name="Changes" comment="Adicionando Validação de CNPJ">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Teste.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empresax/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empresax/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empresax/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empresax/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empresax/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empresax/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empresax/src/main/java/com/backend/Controllers/PessoaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empresax/src/main/java/com/backend/Data/Dto/PessoaDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empresax/src/main/java/com/backend/EmpresaxApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empresax/src/main/java/com/backend/Enum/TipoIdentificador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empresax/src/main/java/com/backend/Models/Pessoa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empresax/src/main/java/com/backend/Repositories/PessoaRepositories.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empresax/src/main/java/com/backend/Services/PessoaServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empresax/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empresax/src/test/java/com/backend/EmpresaxApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emprestimo-pay/payment/src/main/java/com/empresax/payment/Controllers/PaymentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emprestimo-pay/payment/src/main/java/com/empresax/payment/Models/Emprestimo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emprestimo-pay/payment/src/main/java/com/empresax/payment/Repositories/PaymentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emprestimo-pay/payment/src/main/java/com/empresax/payment/Services/PaymentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emprestimos/src/main/java/com/example/backend/Data/Dto/EmprestimoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emprestimos/src/main/java/com/example/backend/Data/Dto/LimitsDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emprestimos/src/main/java/com/example/backend/Models/Emprestimo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emprestimos/src/main/java/com/example/backend/Repositories/EmprestimoRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emprestimos/src/main/java/com/example/backend/Services/EmprestimoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emprestimos/src/main/java/com/example/backend/config/RestTemplateConfig.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;RafaelB05&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="1e814516-9953-44f9-afdb-a9c93438ec3b" />
+        <option name="url" value="https://github.com/RafaelB05/API-Crud.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2aBTBTzCgM9Xj9E9FPaqI6HlhfM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.EmpresaxApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/bruni/OneDrive/Área de Trabalho/teste/Teste/teste",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bruni\OneDrive\Área de Trabalho\teste\Teste\empresax" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="EmpresaxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="empresax" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.backend.EmpresaxApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="83208530-b06f-4cc5-8ee7-744bf9c47113" name="Changes" comment="" />
+      <created>1703790836157</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703790836157</updated>
+      <workItem from="1703790837195" duration="6972000" />
+      <workItem from="1703871311832" duration="10083000" />
+      <workItem from="1703882294843" duration="134000" />
+      <workItem from="1703882446696" duration="291000" />
+      <workItem from="1703882809161" duration="1743000" />
+      <workItem from="1703942181518" duration="61000" />
+      <workItem from="1703942265104" duration="6460000" />
+      <workItem from="1703972276107" duration="208000" />
+      <workItem from="1703972502421" duration="44000" />
+    </task>
+    <task id="LOCAL-00001" summary="Definição do Projeto e configuração da classe Pessoa">
+      <option name="closed" value="true" />
+      <created>1703791127617</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703791127617</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Aplicando o Padrão DTO e finalização do CRUD">
+      <option name="closed" value="true" />
+      <created>1703873700405</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703873700405</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Refatorando campo de Id entidade Pessoa">
+      <option name="closed" value="true" />
+      <created>1703876496896</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703876496896</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Adicionando Validações">
+      <option name="closed" value="true" />
+      <created>1703882578996</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703882578996</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Adicionando Validação de CPF">
+      <option name="closed" value="true" />
+      <created>1703943297979</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703943297980</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Adicionando Validação de CNPJ">
+      <option name="closed" value="true" />
+      <created>1703945967832</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703945967833</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Definição do Projeto e configuração da classe Pessoa" />
+    <MESSAGE value="Aplicando o Padrão DTO e finalização do CRUD" />
+    <MESSAGE value="Refatorando campo de Id entidade Pessoa" />
+    <MESSAGE value="Adicionando Validações" />
+    <MESSAGE value="Adicionando Validação de CPF" />
+    <MESSAGE value="Adicionando Validação de CNPJ" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionando Validação de CNPJ" />
+  </component>
+</project>
