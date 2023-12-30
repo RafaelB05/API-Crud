@@ -2,6 +2,7 @@ package com.example.backend.Services;
 
 import com.example.backend.Data.Dto.EmprestimoDTO;
 import com.example.backend.Data.Dto.LimitsDTO;
+import com.example.backend.Exceptions.CustomException;
 import com.example.backend.Models.Emprestimo;
 import com.example.backend.Repositories.EmprestimoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class EmprestimoService {
     public Emprestimo realizarEmprestimo(EmprestimoDTO novoEmprestimo){
 
         if(novoEmprestimo.getNumeroParcelas() > 24){
-            throw new RuntimeException();
+            throw new CustomException("A quantidade de parcelas excede o permitido");
         }
         else{
             String url = "http://localhost:8080/api/pessoa/internal/"+novoEmprestimo.getIdentificadorSolicitante();
@@ -37,7 +38,7 @@ public class EmprestimoService {
                 return restTemplate.postForObject(url,emprestimo,Emprestimo.class);
             }
             else{
-                throw  new RuntimeException();
+                throw  new CustomException("Valores incompativeis");
             }
 
 

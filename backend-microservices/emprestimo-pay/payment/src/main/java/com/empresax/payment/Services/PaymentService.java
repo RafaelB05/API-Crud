@@ -1,5 +1,6 @@
 package com.empresax.payment.Services;
 
+import com.empresax.payment.Exceptions.CustomException;
 import com.empresax.payment.Models.Emprestimo;
 import com.empresax.payment.Repositories.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +13,14 @@ public class PaymentService {
     private PaymentRepository repository;
 
     public Emprestimo realizarPagamento(int id){
-        Emprestimo entidade = repository.findById(id).orElseThrow();
-        entidade.setStatus_pagamento("pago");
-        return  repository.save(entidade);
+        try {
+            Emprestimo entidade = repository.findById(id).orElseThrow();
+            entidade.setStatus_pagamento("pago");
+            return repository.save(entidade);
+        }catch (Exception e){
+            throw  new CustomException("Empréstimo com o identificador: " + id + "não encontrada");
+        }
+
     }
 
 }
