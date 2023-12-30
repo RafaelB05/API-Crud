@@ -6,6 +6,7 @@ import com.backend.Models.Pessoa;
 import com.backend.Repositories.PessoaRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 @Service
 public class PessoaServices {
@@ -47,7 +48,7 @@ public class PessoaServices {
         return  repositories.findAll();
     }
 
-    public Pessoa createPessoa(PessoaDTO pessoa){
+    public Pessoa createPessoa(PessoaDTO pessoa) throws Exception {
         Pessoa entidade = new Pessoa();
         TipoIdentificador identificadorPessoa = verificaTipoIdentificador(pessoa.getIdentificador());
         entidade.setNome(pessoa.getNome());
@@ -61,7 +62,7 @@ public class PessoaServices {
             return repositories.save(entidade);
         }
         else
-            throw new RuntimeException();
+            throw new Exception("Identificador invalido");
     }
 
     public Pessoa updatePessoa(int id,PessoaDTO pessoa){
