@@ -43,7 +43,7 @@ public class PessoaController {
         services.deletePessoa(id);
     }
 
-    @GetMapping(value = "/Integerernal/{identificador}",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/internal/{identificador}",produces = MediaType.APPLICATION_JSON_VALUE)
     public LimitsDTO findPessoaLimits(@PathVariable(value = "identificador")String identificador){
         return services.findPessoaLimits(identificador);
     }

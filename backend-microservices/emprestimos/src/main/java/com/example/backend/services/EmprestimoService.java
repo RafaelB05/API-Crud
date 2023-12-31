@@ -21,7 +21,6 @@ public class EmprestimoService {
             throw new IllegalValueException("A quantidade de parcelas excede o permitido");
 
         String url = "http://localhost:8080/api/pessoa/internal/"+novoEmprestimo.getIdentificadorSolicitante();
-        Emprestimo emprestimo = new Emprestimo();
         LimitsDTO response = restTemplate.getForObject(url,LimitsDTO.class);
 
         if(validaValorParcela(novoEmprestimo.getValorEmprestimo(),novoEmprestimo.getNumeroParcelas(),response.getValMin()))
@@ -30,25 +29,34 @@ public class EmprestimoService {
         if(validaValorTotal(novoEmprestimo.getValorEmprestimo(),response.getValTotal()))
             throw new IllegalValueException("Valor total permitido foi ultrapassado");
 
+        Emprestimo emprestimo = mapearEmprestimo(novoEmprestimo,response);
+
+        return repository.save(emprestimo);
+
+    }
+    private boolean validaValorTotal(double valorEstimado, double valorPermitido){
+        return valorEstimado > valorPermitido;
+    }
+
+    private boolean validaValorParcela(double valorEstimado, int numeroParcelas, double valorPermitido){
+        double valorParcela = valorEstimado / numeroParcelas;
+        return  valorParcela < valorPermitido;
+    }
+
+    private boolean validaNumeroParcela(int numeroParcelas){
+        return numeroParcelas > 24;
+    }
+
+    private Emprestimo mapearEmprestimo(EmprestimoDTO novoEmprestimo,LimitsDTO response){
+        Emprestimo emprestimo= new Emprestimo();
+
         emprestimo.setValorEmprestimo(novoEmprestimo.getValorEmprestimo());
         emprestimo.setNumeroParcelas(novoEmprestimo.getNumeroParcelas());
         emprestimo.setStatusPagamento("Aberto");
         emprestimo.setIdPessoa(response.getIdPessoa());
         emprestimo.setDataCriacao(novoEmprestimo.getDataCriacao());
-        return repository.save(emprestimo);
 
-    }
-    private boolean validaValorTotal(double valorEstimado, double valorPermitido){
-        return valorEstimado < valorPermitido;
-    }
-
-    private boolean validaValorParcela(double valorEstimado, int numeroParcelas, double valorPermitido){
-        double valorParcela = valorEstimado / numeroParcelas;
-        return  valorParcela > valorPermitido;
-    }
-
-    private boolean validaNumeroParcela(int numeroParcelas){
-        return numeroParcelas < 24;
+        return emprestimo;
     }
 
 }
