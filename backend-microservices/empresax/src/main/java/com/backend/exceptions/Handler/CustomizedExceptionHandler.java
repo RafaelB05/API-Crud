@@ -1,7 +1,8 @@
 package com.backend.exceptions.Handler;
 
-import com.backend.exceptions.CustomException;
+import com.backend.exceptions.EntityNotFoundException;
 import com.backend.exceptions.ExceptionResponse;
+import com.backend.exceptions.InvalidIdException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -23,11 +24,18 @@ public class CustomizedExceptionHandler extends ResponseEntityExceptionHandler {
         return  new ResponseEntity<>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ExceptionHandler(CustomException.class)
-    public final ResponseEntity<ExceptionResponse> handleCustomExceptions(Exception ex, WebRequest request){
+    @ExceptionHandler(EntityNotFoundException.class)
+    public final ResponseEntity<ExceptionResponse> handleEntityNotFoundExceptions(Exception ex, WebRequest request){
         ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(),request.getDescription(false));
 
-        return  new ResponseEntity<>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+        return  new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(InvalidIdException.class)
+    public final ResponseEntity<ExceptionResponse> handleInvalidIdExceptionsExceptions(Exception ex, WebRequest request){
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(),request.getDescription(false));
+
+        return  new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
     }
 
 }

@@ -2,7 +2,8 @@ package com.backend.services;
 
 import com.backend.data.dto.LimitsDTO;
 import com.backend.data.dto.PessoaDTO;
-import com.backend.exceptions.CustomException;
+import com.backend.exceptions.EntityNotFoundException;
+import com.backend.exceptions.InvalidIdException;
 import com.backend.models.Pessoa;
 import com.backend.repositories.PessoaRepositories;
 import com.backend.strategy.*;
@@ -11,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @Service
 @Builder
@@ -30,13 +30,8 @@ public class PessoaServices {
         }
     }
 
-    public Pessoa findPessoa(int id) throws NoSuchElementException{
-        try{
-            return repositories.findById(id).orElseThrow();
-        }
-        catch (Exception e){
-            throw  new CustomException("Pessoa com o id: " + id + "não encontrada");
-        }
+    public Pessoa findPessoa(int id){
+            return repositories.findById(id).orElseThrow(()-> new EntityNotFoundException("A pessoa de identificador:" + id +" não foi localizada"));
     }
 
     public List<Pessoa> findAllPessoas(){
@@ -57,38 +52,24 @@ public class PessoaServices {
             return repositories.save(entidade);
         }
         else
-            throw new RuntimeException();
+            throw new InvalidIdException("O identificador digitado possui valor invalido");
     }
 
     public Pessoa updatePessoa(int id,PessoaDTO pessoa){
-        try{
-            Pessoa entidade = repositories.findById(id).orElseThrow();
+            Pessoa entidade = repositories.findById(id).orElseThrow(()->new EntityNotFoundException("Pessoa com o id: " + id + "não encontrada"));
             entidade.setNome(pessoa.getNome());
             entidade.setDataNascimento(pessoa.getDataNascimento());
-
             return repositories.save(entidade);
-        }catch (Exception e){
-            throw new CustomException("Pessoa com o id: " + id + "não encontrada");
-        }
     }
 
     public void deletePessoa(int id){
-        try{
-            Pessoa entidade = repositories.findById(id).orElseThrow();
-            repositories.delete(entidade);
-        }catch (Exception e){
-            throw new CustomException("Pessoa com o id: " + id + "não encontrada");
-        }
+        Pessoa entidade = repositories.findById(id).orElseThrow(()->new EntityNotFoundException("Pessoa com o id: " + id + "não encontrada"));
+        repositories.delete(entidade);
 
     }
 
     public LimitsDTO findPessoaLimits(String identificador){
-        try {
-            Pessoa entidade = repositories.findPessoaByCPF(identificador);
-            return new LimitsDTO(entidade.getId(),entidade.getValTotal(),entidade.getValParcela());
-
-        }catch (Exception e){
-            throw  new CustomException("Pessoa com o identificador: " + identificador + "não encontrada");
-        }
+        Pessoa entidade = repositories.findPessoaByCPF(identificador);
+        return new LimitsDTO(entidade.getId(),entidade.getValTotal(),entidade.getValParcela());
     }
 }
