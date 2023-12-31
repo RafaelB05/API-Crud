@@ -1,5 +1,6 @@
 package com.backend.exceptions.Handler;
 
+import com.backend.exceptions.DuplicatedEntityException;
 import com.backend.exceptions.EntityNotFoundException;
 import com.backend.exceptions.ExceptionResponse;
 import com.backend.exceptions.InvalidIdException;
@@ -36,6 +37,13 @@ public class CustomizedExceptionHandler extends ResponseEntityExceptionHandler {
         ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(),request.getDescription(false));
 
         return  new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(DuplicatedEntityException.class)
+    public final ResponseEntity<ExceptionResponse> handleDuplicatedEntityExceptionsExceptions(Exception ex, WebRequest request){
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(),request.getDescription(false));
+
+        return  new ResponseEntity<>(exceptionResponse, HttpStatus.CONFLICT);
     }
 
 }

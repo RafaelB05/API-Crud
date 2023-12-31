@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class LimitsDTO {
-    private int idPessoa;
-    private double valTotal;
-    private double valMin;
+    private Integer idPessoa;
+    private Double valTotal;
+    private Double valMin;
 }

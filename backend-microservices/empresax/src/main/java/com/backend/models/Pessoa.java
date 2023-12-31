@@ -16,7 +16,7 @@ import java.util.Date;
 public class Pessoa implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     @Column(name = "identificador",nullable = false,unique = true)
     private String identificador;
     @Column(name="nome",nullable = false)
@@ -24,9 +24,9 @@ public class Pessoa implements Serializable {
     @Column(name="tipo-identificador",nullable = false,length = 4)
     private String tipoIdentificador;
     @Column(name="val-parcela",nullable = false)
-    private double valParcela;
+    private Double valParcela;
     @Column(name="val-total",nullable = false)
-    private double valTotal;
+    private Double valTotal;
     @Column(name="data-nasc",nullable = false)
     private Date dataNascimento;
 }
