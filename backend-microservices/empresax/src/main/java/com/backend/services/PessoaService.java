@@ -1,6 +1,5 @@
 package com.backend.services;
 
-import com.backend.data.dto.LimitsDTO;
 import com.backend.data.dto.PessoaDTO;
 import com.backend.exceptions.DuplicatedEntityException;
 import com.backend.exceptions.EntityNotFoundException;
@@ -76,10 +75,5 @@ public class PessoaService {
         Pessoa entidade = repository.findById(id).orElseThrow(()->new EntityNotFoundException("Pessoa com o id: " + id + "não encontrada"));
         repository.delete(entidade);
 
-    }
-
-    public LimitsDTO findPessoaLimits(String identificador){
-        Pessoa entidade = repository.findByIdentificador(identificador).orElseThrow(()->new EntityNotFoundException("Pessoa com o identificador: " + identificador + "não encontrada"));
-        return new LimitsDTO(entidade.getId(),entidade.getValTotal(),entidade.getValParcela());
     }
 }

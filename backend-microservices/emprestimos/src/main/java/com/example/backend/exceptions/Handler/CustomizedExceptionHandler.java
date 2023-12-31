@@ -1,5 +1,6 @@
 package com.example.backend.exceptions.Handler;
 
+import com.example.backend.exceptions.EntityNotFoundException;
 import com.example.backend.exceptions.IllegalValueException;
 import com.example.backend.exceptions.ExceptionResponse;
 import org.springframework.http.HttpStatus;
@@ -23,8 +24,15 @@ public class CustomizedExceptionHandler extends ResponseEntityExceptionHandler {
         return  new ResponseEntity<>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @ExceptionHandler(EntityNotFoundException.class)
+    public final ResponseEntity<ExceptionResponse> handleEntityNotFoundExceptions(Exception ex, WebRequest request){
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(),request.getDescription(false));
+
+        return  new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
+    }
+
     @ExceptionHandler(IllegalValueException.class)
-    public final ResponseEntity<ExceptionResponse> handleCustomExceptions(Exception ex, WebRequest request){
+    public final ResponseEntity<ExceptionResponse> handleIllegalValueExceptions(Exception ex, WebRequest request){
         ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(),request.getDescription(false));
 
         return  new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);

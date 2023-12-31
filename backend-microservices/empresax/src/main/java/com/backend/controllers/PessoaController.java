@@ -1,7 +1,6 @@
 package com.backend.controllers;
 
 
-import com.backend.data.dto.LimitsDTO;
 import com.backend.data.dto.PessoaDTO;
 import com.backend.models.Pessoa;
 import com.backend.services.PessoaService;
@@ -41,11 +40,6 @@ public class PessoaController {
     @DeleteMapping(value = "/{id}")
     public  void deletePessoa(@PathVariable(value = "id")Integer id){
         services.deletePessoa(id);
-    }
-
-    @GetMapping(value = "/internal/{identificador}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public LimitsDTO findPessoaLimits(@PathVariable(value = "identificador")String identificador){
-        return services.findPessoaLimits(identificador);
     }
 
 }
